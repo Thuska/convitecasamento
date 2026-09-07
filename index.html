@@ -53,11 +53,21 @@
       .opening-seal::before { display:none; }
       .opening-seal:hover { transform:translate(-50%,-50%) scale(1.06); filter:none; }
       .seal-imprint { width:105px; height:105px; border:0; box-shadow:none; background:transparent; }
-      .seal-imprint img { width:96px; max-height:96px; filter:sepia(1) saturate(1.6) brightness(.55); opacity:.82; mix-blend-mode:multiply; }
+      .seal-imprint img { width:116px; max-height:116px; filter:grayscale(1) brightness(.22) contrast(1.25); opacity:.9; mix-blend-mode:multiply; }
       .seal-hint { top:calc(50% + 111px); bottom:auto; width:100%; color:#4b4b48; font-size:.69rem; text-align:center; text-shadow:0 1px 7px rgba(255,255,255,.95); }
       .opening.is-opening .opening-letter { opacity:0; transform:translateY(-108%) scale(.98); transition:transform 1.08s cubic-bezier(.65,0,.2,1),opacity .5s ease .52s; }
       .date-organized, .date-organized > small, .date-organized > div span, .date-organized b { color:#ad842d !important; }
       .date-organized > div span { border-color:#ad842d !important; }
+    </style>
+    <style>
+      /* A aba do envelope abre antes de o convite revelar a página. */
+      .opening { background:#e9e6de; }
+      .opening-letter { overflow:hidden; background:url("abertura-envelope-realista.png") center/cover no-repeat; transform-style:preserve-3d; }
+      .opening-letter::before { display:block; position:absolute; z-index:2; top:34%; right:0; bottom:35%; left:0; border:0; background:linear-gradient(145deg,rgba(255,255,252,.96),rgba(223,219,207,.92)); box-shadow:0 5px 10px rgba(73,64,45,.13); clip-path:polygon(0 0,100% 0,50% 100%); content:""; transform-origin:top center; transform-style:preserve-3d; transition:transform .82s cubic-bezier(.6,0,.2,1); }
+      .opening-letter::after { display:none; }
+      .opening.is-opening .opening-letter::before { transform:rotateX(-172deg); }
+      .opening.is-opening .opening-letter { opacity:0; transform:translateY(-18vh) scale(.96); transition:transform 1s cubic-bezier(.65,0,.2,1) .54s,opacity .48s ease .95s; }
+      .opening.is-opening .opening-seal { opacity:0; transform:translate(-50%,-50%) scale(.72) rotate(-8deg); transition:transform .32s ease,opacity .28s ease; }
     </style>
   </head>
   <body>
@@ -142,7 +152,7 @@
         var abertura = document.getElementById('abertura');
         abertura.classList.add('is-opening');
         document.body.classList.remove('invite-locked');
-        window.setTimeout(function () { abertura.remove(); }, 1150);
+        window.setTimeout(function () { abertura.remove(); }, 1550);
       });
       var casamento = new Date('2026-12-12T09:30:00-03:00').getTime();
       function atualizarContagem() {

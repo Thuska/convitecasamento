@@ -12,7 +12,7 @@ body { color:var(--ink); font:16px "DM Sans", Arial, sans-serif; }
 .opening-seal:hover { transform:scale(1.055) rotate(-2deg); filter:brightness(1.08); }
 .opening-seal:focus-visible { outline:3px solid var(--gold); outline-offset:7px; }
 .seal-imprint { display:grid; place-items:center; width:96px; height:96px; border:1px solid rgba(96,58,7,.55); border-radius:50%; box-shadow:inset 3px 4px 7px rgba(73,43,5,.4), 1px 1px 0 rgba(255,232,138,.34); }
-.seal-imprint img { width:72px; max-height:72px; object-fit:contain; filter:brightness(.58) sepia(1) saturate(2); opacity:.9; }
+.seal-imprint img { width:110px; max-height:110px; object-fit:contain; filter:grayscale(1) brightness(.22) contrast(1.25); opacity:.9; }
 .seal-hint { position:absolute; z-index:3; bottom:34px; color:#66562d; font:700 .66rem "DM Sans",sans-serif; letter-spacing:.16em; text-transform:uppercase; }
 .opening.is-opening .opening-letter { opacity:0; transform:scale(.92) translateY(-18px); }
 main { max-width:620px; margin:auto; overflow:hidden; }
