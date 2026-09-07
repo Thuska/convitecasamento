@@ -44,6 +44,21 @@
       .date-organized > div span { border-color:#ad842d !important; color:#ad842d; }
       .date-organized b { color:#ad842d !important; }
     </style>
+    <style>
+      .opening { background:#eeeae1 url("abertura-envelope-realista.png") center/cover no-repeat; }
+      .opening::before { display:none; }
+      .opening-letter { width:100vw; height:100vh; min-height:100vh; overflow:visible; border:0; background:transparent; box-shadow:none; }
+      .opening-letter::before, .opening-letter::after { display:none; }
+      .opening-seal { position:absolute; top:50%; left:50%; width:174px; height:174px; transform:translate(-50%,-50%); border-radius:50%; background:transparent; box-shadow:none; }
+      .opening-seal::before { display:none; }
+      .opening-seal:hover { transform:translate(-50%,-50%) scale(1.06); filter:none; }
+      .seal-imprint { width:105px; height:105px; border:0; box-shadow:none; background:transparent; }
+      .seal-imprint img { width:96px; max-height:96px; filter:sepia(1) saturate(1.6) brightness(.55); opacity:.82; mix-blend-mode:multiply; }
+      .seal-hint { top:calc(50% + 111px); bottom:auto; width:100%; color:#4b4b48; font-size:.69rem; text-align:center; text-shadow:0 1px 7px rgba(255,255,255,.95); }
+      .opening.is-opening .opening-letter { opacity:0; transform:translateY(-108%) scale(.98); transition:transform 1.08s cubic-bezier(.65,0,.2,1),opacity .5s ease .52s; }
+      .date-organized, .date-organized > small, .date-organized > div span, .date-organized b { color:#ad842d !important; }
+      .date-organized > div span { border-color:#ad842d !important; }
+    </style>
   </head>
   <body>
     <section class="opening" id="abertura" aria-label="Abertura do convite">
