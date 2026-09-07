@@ -27,6 +27,15 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <section class="opening" id="abertura" aria-label="Abertura do convite">
+      <div class="opening-panel opening-panel-left" aria-hidden="true"></div>
+      <div class="opening-panel opening-panel-right" aria-hidden="true"></div>
+      <div class="opening-card">
+        <img src="logo-gm.png" alt="Monograma G e M" />
+        <p>Graziela &amp; Matheus</p>
+        <button type="button" id="abrir-convite">Abrir convite <span aria-hidden="true">→</span></button>
+      </div>
+    </section>
     <main>
       <section class="hero" aria-labelledby="titulo">
         <div class="hero-background" aria-hidden="true"></div>
@@ -76,7 +85,6 @@
         <div class="detail-card attire">
           <p class="kicker">Traje</p>
           <h2>Esporte fino</h2>
-          <p>Vista-se para celebrar conosco.</p>
         </div>
       </section>
 
@@ -86,5 +94,14 @@
         <p class="footer-date">12 · 12 · 2026</p>
       </footer>
     </main>
+    <script>
+      document.body.classList.add('invite-locked');
+      document.getElementById('abrir-convite').addEventListener('click', function () {
+        var abertura = document.getElementById('abertura');
+        abertura.classList.add('is-opening');
+        document.body.classList.remove('invite-locked');
+        window.setTimeout(function () { abertura.remove(); }, 1150);
+      });
+    </script>
   </body>
 </html>
